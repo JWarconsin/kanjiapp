@@ -9,7 +9,7 @@
     padding: 0;
     box-sizing: border-box;
      font-family:"kyokasho";
-    color: black;S
+    color: black;
   }
   
   header {
@@ -72,12 +72,24 @@
 
 .button-row button {
     width: calc(25% - 10px);
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 35px;
     background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+#global {
+    margin-top: 20px;
+}
+#PopUp {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: black;
+    width: 300px;
+    height: 500px;
+    display: none;
 }

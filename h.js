@@ -28,6 +28,7 @@ function createKanji(pFile) {
         row[i] = row[i].split('\t');
        // test = new Kanji(i, row[i][0], row[i][1], row[i][2], row[i][3], row[i][4], row[i][5]);
        let kanji = {
+        id : i-1,
         kanji: row[i][0],
         onyomi: row[i][1],
         kunyomi: row[i][2],
@@ -40,4 +41,10 @@ function createKanji(pFile) {
        
     }
     console.log(list);
+}
+
+function OpenPopUp(id){
+console.log(list[id].kanji)
+
+
 }
