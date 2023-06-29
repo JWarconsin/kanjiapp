@@ -14,50 +14,29 @@
     <button id="bJLPT">JLPT</button>
     </nav>
     </header>
-
-    <h1 align="center">漢字</h1>
+    <h1>漢字</h1>
     <label>
         <input type="text">
-        <button id="Search">Rechercher</button>
+        <button id="Search" onclick="kanji_search()">Rechercher</button>
     </label>
-    <section id= "global">
-        <div class="button-row" >
-        
-                <button id = "0" onclick="OpenPopUp(0)"></button>
+    <section id= "kanji">
+        <div class="button_kanji" >
+                <button id = "0" onclick="OpenPopUp(0)">山</button>
                 <button id = "1" onclick="OpenPopUp(1)">頑</button>
                 <button id = "2" onclick="OpenPopUp(2)">う</button>
                 <button id = "3" onclick="OpenPopUp(3)">え</button> 
-
         </div>
-        <div class="button-row">
-    
-            <button>お</button>
-            <button>頑</button>
-            <button>頑</button>
-            <button>え</button>
-
-    </div>
-    <div id="PopUp"><p>baguette</p></div>
     </section>
     <section id="minna"></section>
     <section id="JLPT"></section>
-    
+    <div id="PopUp" onclick = "closepopup()">
+        <div id = "divkanji"><p>山</p></div>
+        <p class = "popupkanji_p"><span>音読み : </span>サン、ザン </p> 
+        <p class = "popupkanji_p"><span>訓読み : </span>やま </p>
+        <p class = "popupkanji_p"><span>れい : </span>やま、やまだ、かざん </p> 
+        <p class = "popupkanji_p"><span>例 : </span>山、山田、火山 </p> 
+        <p class = "popupkanji_p"><span>フランス語 : </span>montagne, yamada, volcan</p> 
+    </div> 
 </body>
 </html>
 <script src="h.js"></script>
-<!-- 
-<div id="main-container">
-    <div class="one_line">
-      <button id="kanji_1">一<button>
-      <button id="kanji_2">石<button>
-      <button id="kanji_3">二<button>
-      <button id="kanji_4">鳥<button>
-    </div>
-    <div class="one_line">
-      <button id="kanji_5">滑<button>
-      <button id="kanji_6">翔<button>
-      <button id="kanji_7">跳<button>
-      <button id="kanji_8">伞<button>
-    </div>
-    etc...
-  </div> -->
