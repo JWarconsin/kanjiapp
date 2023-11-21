@@ -16,11 +16,18 @@
     
     background-color: #f10000;
     padding: 10px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    /* height: 100px; */
   }
   
   nav {
     text-align: center;
+  
   }
+
+
   
   nav button {
     margin: 5px;
@@ -31,18 +38,21 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
   }
   
 
   h1 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
+
   }
  
   label {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    
   }
   
   input[type="text"] {
@@ -61,6 +71,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
   }
 /* Styles pour les boutons */
 .button_kanji {
@@ -71,7 +82,7 @@
 }
 
 .button_kanji button {
-    width: calc(25% - 10px);
+    /* width: calc(25% - 10px); */
     padding: 5px;
     margin-top: 5px;
     font-size: 35px;
@@ -81,17 +92,34 @@
     border-radius: 4px;
     cursor: pointer;
 }
-#kanji {
-    margin-top: 20px;
+#section_kanji {
+    margin-top: 70px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#barrerecherche{
+  position: fixed;
+  top: 65px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  width: 100%; 
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+  /* align-self: center; */
+  text-align: center;
+
 }
 #PopUp {
-    position: absolute;
+    position: fixed;
     top: 65px;
     margin-top: 5px;
      left: 10px; 
     background-color: rgb(255, 0, 0);
     width: 340px;
-    /* height: 660px; */
+     height: 660px; 
     display: none; 
     border-radius: 30px;
     padding-bottom: 30px;

@@ -8,34 +8,26 @@
 </head>
 <body>
     <header>
-    <nav>
-    <button id="bglobal">Tout</button>
-    <button id="bminna">みんなの日本語</button>
-    <button id="bJLPT">JLPT</button>
-    </nav>
+        <nav>
+            <button id="bglobal" onclick="All()">Tout</button>
+            <button id="bminna" onclick="minna()">みんなの日本語</button>
+            <button id="bJLPT">JLPT</button>
+        </nav>
     </header>
     <h1>漢字</h1>
-    <label>
-        <input type="text">
-        <button id="Search" onclick="kanji_search()">Rechercher</button>
-    </label>
-    <section id= "kanji">
-        <div class="button_kanji" >
-                <button id = "0" onclick="OpenPopUp(0)">山</button>
-                <button id = "1" onclick="OpenPopUp(1)">頑</button>
-                <button id = "2" onclick="OpenPopUp(2)">う</button>
-                <button id = "3" onclick="OpenPopUp(3)">え</button> 
+    
+    <section id="section_kanji">
+        <div id="barrerecherche">
+            <input id="search_input" type="text">
+            <button id="Search" onclick="kanji_search()">Rechercher</button>
+        </div>
+        <div id="button_kanji" class="button_kanji" >
+
         </div>
     </section>
     <section id="minna"></section>
     <section id="JLPT"></section>
     <div id="PopUp" onclick = "closepopup()">
-        <div id = "divkanji"><p>山</p></div>
-        <p class = "popupkanji_p"><span>音読み : </span>サン、ザン </p> 
-        <p class = "popupkanji_p"><span>訓読み : </span>やま </p>
-        <p class = "popupkanji_p"><span>れい : </span>やま、やまだ、かざん </p> 
-        <p class = "popupkanji_p"><span>例 : </span>山、山田、火山 </p> 
-        <p class = "popupkanji_p"><span>フランス語 : </span>montagne, yamada, volcan</p> 
     </div> 
 </body>
 </html>
