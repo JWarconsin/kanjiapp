@@ -4,6 +4,7 @@ let section_kanji = document.getElementById("section_kanji");
 let search_input = document.getElementById("search_input");
 let button_kanji = document.getElementById("button_kanji");
 let bminna = document.getElementById("bminna");
+let section_minna = document.getElementById("section_minna");
 search_input.addEventListener("keydown",e=>{
     if (e.code == "Enter"){
         kanji_search();
@@ -123,6 +124,12 @@ function kanji_search(){
 function minna(){
     section_kanji.style.display = "none";
 
+    // section_minna.innerHTML = "";
+    // let innerHTML = "";
+    // innerHTML = "<div id='divminna'>";
+    
+    // innerHTML += "</div>";
+    // section_minna.innerHTML = innerHTML;
 }
 
 function All(){
