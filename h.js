@@ -1,10 +1,15 @@
+let lesson_list = [];
 let kanji_list = [];
+let word_list = [];
 let popup;
 let section_kanji = document.getElementById("section_kanji");
 let search_input = document.getElementById("search_input");
 let button_kanji = document.getElementById("button_kanji");
 let bminna = document.getElementById("bminna");
 let section_minna = document.getElementById("section_minna");
+let select_lesson = document.getElementById("select_lesson");
+
+All();
 search_input.addEventListener("keydown",e=>{
     if (e.code == "Enter"){
         kanji_search();
@@ -13,19 +18,24 @@ search_input.addEventListener("keydown",e=>{
 // e.code="Enter"
 let search_list = [];
 popup = document.getElementById("PopUp");
-readKANJIFile("日本語 - ぼＢ.tsv");
+readFile("日本語 - ぼＢ.tsv", "KANJI");
+readFile("日本語 - みんなの日本語.tsv", "MINNA");
 
-
-function readKANJIFile(pFile) {
+function readFile(pFile, type) {
     let rawFile = new XMLHttpRequest();
     rawFile.open("GET", pFile, true);
     rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 tsvFile = rawFile.responseText;
-                
-                    createKanji(tsvFile);
-                
+                    switch (type) {
+                        case "KANJI":
+                            createKanji(tsvFile);
+                            break;
+                        case "MINNA":
+                            createMinna(tsvFile);
+                            break;
+                    }
             }
         }
     }
@@ -52,6 +62,36 @@ function createKanji(pFile) {
        
     }
     kanji_search();
+}
+
+function createMinna(pFile) {
+    let row = pFile.split(/\r\n|\n/);
+    for (let i = 1; i < row.length; i++) {
+        row[i] = row[i].split('\t');
+        if (row[i][0][0] == "@") {
+            let lesson = row[i][0].split("@");
+            lesson_list.push(lesson[1]);
+        } else {
+            let kanji = {
+                id : i-1,
+                kanji: row[i][0],
+                kana: row[i][1],
+                french: row[i][2],
+                lesson: row[i][3]
+            };
+            word_list.push(kanji);
+        }
+    }
+    kanji_search();
+    select_lesson.innerHTML = "";
+    let innerHTML = "";
+    innerHTML += `<option value="0">Tout</option>`
+    for(let i = 0;i < lesson_list.length ; i++)
+    {
+        innerHTML += `<option value="${i+1}">Leçon ${lesson_list[i]}</option>`
+    }
+    select_lesson.innerHTML = innerHTML;
+    console.log(lesson_list);
 }
 
 function OpenPopUp(id, liste){
@@ -123,7 +163,11 @@ function kanji_search(){
 
 function minna(){
     section_kanji.style.display = "none";
+    section_minna.style.display = "flex";
+    n_keyboard_container.style.display = "none";
 
+
+    // n_keyboard_container
     // section_minna.innerHTML = "";
     // let innerHTML = "";
     // innerHTML = "<div id='divminna'>";
@@ -134,5 +178,25 @@ function minna(){
 
 function All(){
     section_kanji.style.display = "flex";
+    section_minna.style.display = "none";
+    n_keyboard_container.style.display = "none";
+
+}
+
+function Start(){
+
+    switch (select_type.value){
+    case "kanji_to_hiragana":
+        n_keyboard_container.style.display = "flex";
+        console.log("test")
+        break;
+    case "fr_to_kana":
+        n_keyboard_container.style.display = "flex";
+        console.log("test2")
+        break;
+    case "kanji_to_kami":
+        n_keyboard_container.style.display = "none";
+        break;
+    }
 
 }

@@ -184,12 +184,12 @@
   margin-top: 50px;
 }
 #filtres{
-background-color: #f10000;
+/* background-color: #f10000; */
 width: 100%;
 display: flex;
 }
 
-#type_exo{
+#select_type{
   display: flex;
   margin-top: 20px;
   height: 50px;
@@ -197,7 +197,7 @@ display: flex;
   font-size: 20px;
 }
 
-#num_lecon{
+#select_lesson{
   display: flex;
   margin-top: 20px;
   height: 50px;
@@ -205,7 +205,7 @@ display: flex;
   font-size: 20px;
 }
 
-#start{
+#Start{
   display: flex;
   margin-top: 20px;
   height: 50px;

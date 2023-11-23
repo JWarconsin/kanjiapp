@@ -27,21 +27,17 @@
     </section>
     <section id="section_minna">
         <section id="filtres">
-            <select name="type_exo" id="type_exo">
+            <select name="select_type" id="select_type">
                 <option value="kanji_to_hiragana">漢字→平仮名</option>
                 <option value="fr_to_kana">フランス語→平仮名</option>
                 <option value="kanji_to_kami">漢字→紙</option>
             </select>
-            <select name="num_lecon" id="num_lecon">
-                <option value="1">Leçon 1</option>
-                <option value="2">Leçon 2</option>
-                <option value="3">Leçon 3</option>
-                <option value="4">Leçon 4</option>
+            <select name="select_lesson" id="select_lesson">     
             </select>
-            <button id="start">Start</button>
+            <button id="Start" onclick="Start()">Start</button>
         </section>
         
-        <H1 id="devine_moi">頑張る</H1>
+        <H1 id="devine_moi"></H1>
 
         <section id="exo_minna">
             <section id="n_keyboard_container">
