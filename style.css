@@ -116,7 +116,7 @@
     position: fixed;
     top: 65px;
     margin-top: 5px;
-     left: 10px; 
+     left: 20px; 
     background-color: rgb(255, 0, 0);
     width: 340px;
      height: 660px; 
@@ -124,6 +124,7 @@
     border-radius: 30px;
     padding-bottom: 30px;
     padding-top: 20px;
+    
     
 }
 #divkanji {
@@ -185,13 +186,13 @@
 }
 #filtres{
 /* background-color: #f10000; */
+padding-top: 10px;
 width: 100%;
 display: flex;
 }
 
 #select_type{
   display: flex;
-  margin-top: 20px;
   height: 50px;
   width: 55%;
   font-size: 20px;
@@ -199,7 +200,6 @@ display: flex;
 
 #select_lesson{
   display: flex;
-  margin-top: 20px;
   height: 50px;
   width: 30%;
   font-size: 20px;
@@ -207,10 +207,24 @@ display: flex;
 
 #Start{
   display: flex;
-  margin-top: 20px;
   height: 50px;
   width: 15%;
   font-size: 20px;
   align-items: center;
 
+}
+.vert{
+  color: #4caf50;
+ 
+}
+
+.rouge{
+  color: #f10000;
+}
+.h3{
+  height: 21px;
+}
+#section_failed{
+  display: none;
+  margin-top: 65px;
 }

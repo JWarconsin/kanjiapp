@@ -1,6 +1,8 @@
 let lesson_list = [];
 let kanji_list = [];
 let word_list = [];
+let random_list = [];
+let failed_list = [];
 let popup;
 let section_kanji = document.getElementById("section_kanji");
 let search_input = document.getElementById("search_input");
@@ -8,7 +10,23 @@ let button_kanji = document.getElementById("button_kanji");
 let bminna = document.getElementById("bminna");
 let section_minna = document.getElementById("section_minna");
 let select_lesson = document.getElementById("select_lesson");
-
+let devine_moi = document.getElementById("devine_moi");
+let k_input = document.getElementById("keyboard_input");
+let answer = document.getElementById("answer");
+let btn_enter = document.getElementById("btn_enter");
+let randomCurrentIndex = 0;
+let waiting_answer = true;
+let meaning = document.getElementById("meaning");
+let score = 0;
+let section_failed = document.getElementById("section_failed");
+btn_enter.addEventListener("click",e=>{
+    if(waiting_answer){
+        Check();
+  
+    } else {
+        Next();
+    }
+});
 All();
 search_input.addEventListener("keydown",e=>{
     if (e.code == "Enter"){
@@ -20,6 +38,8 @@ let search_list = [];
 popup = document.getElementById("PopUp");
 readFile("日本語 - ぼＢ.tsv", "KANJI");
 readFile("日本語 - みんなの日本語.tsv", "MINNA");
+
+
 
 function readFile(pFile, type) {
     let rawFile = new XMLHttpRequest();
@@ -65,11 +85,12 @@ function createKanji(pFile) {
 }
 
 function createMinna(pFile) {
+    let lesson;
     let row = pFile.split(/\r\n|\n/);
     for (let i = 1; i < row.length; i++) {
         row[i] = row[i].split('\t');
         if (row[i][0][0] == "@") {
-            let lesson = row[i][0].split("@");
+            lesson = row[i][0].split("@");
             lesson_list.push(lesson[1]);
         } else {
             let kanji = {
@@ -77,7 +98,7 @@ function createMinna(pFile) {
                 kanji: row[i][0],
                 kana: row[i][1],
                 french: row[i][2],
-                lesson: row[i][3]
+                lesson: lesson[1]
             };
             word_list.push(kanji);
         }
@@ -184,15 +205,24 @@ function All(){
 }
 
 function Start(){
-
+    section_failed.innerHTML = "";
+    score = 0;
+    randomCurrentIndex = 0;
+    random_list = []
+    for(let i = 0;i < word_list.length ; i++){
+        if(word_list[i].lesson == select_lesson.value || select_lesson.value == 0)
+        {
+            random_list.push(word_list[i]);
+        }
+    }
+    random_list = zt_randomizeList(random_list);
+    display_training();
     switch (select_type.value){
     case "kanji_to_hiragana":
         n_keyboard_container.style.display = "flex";
-        console.log("test")
         break;
     case "fr_to_kana":
         n_keyboard_container.style.display = "flex";
-        console.log("test2")
         break;
     case "kanji_to_kami":
         n_keyboard_container.style.display = "none";
@@ -200,3 +230,87 @@ function Start(){
     }
 
 }
+
+function zt_randomizeList(pList) {
+    let tmp = 0;
+    let rndIndex = 0;
+    for (let i = 0; i < pList.length; i++) {
+        rndIndex = rnd(0, pList.length);
+        tmp = pList[i];
+        pList[i] = pList[rndIndex];
+        pList[rndIndex] = tmp;
+    }
+
+    return pList;
+}
+
+function rnd(pMin, pMax) { //? pMax NON COMPRIS
+    return Math.floor(Math.random() * (pMax - pMin)) + pMin;
+}
+
+function display_training(){
+    answer.innerHTML = "?"; 
+    switch (select_type.value){
+        case "kanji_to_hiragana":
+            devine_moi.innerHTML = `${random_list[randomCurrentIndex].kanji}`;
+            break;
+        case "fr_to_kana":
+            devine_moi.innerHTML = `${random_list[randomCurrentIndex].french}`;
+            break;
+        case "kanji_to_kami":
+            devine_moi.innerHTML = `${random_list[randomCurrentIndex].kana}`;
+            break;  
+    }
+}
+
+function Next(){
+    waiting_answer = true;
+    if(k_input.value == random_list[randomCurrentIndex].kana){
+    }else{
+        
+    }
+    randomCurrentIndex++;
+    if(randomCurrentIndex == random_list.length){
+        randomCurrentIndex = 0;
+        alert(`score : ${score}/${random_list.length}`);
+        n_keyboard_container.style.display = "none";
+        let innerHTML = "";
+        innerHTML = "<ul>";
+        for(let i = 0;i < failed_list.length ; i++){
+            innerHTML += `<li>${failed_list[i].kanji} : ${failed_list[i].kana} : ${failed_list[i].french}</li>`;
+        }
+        innerHTML += "</ul>";
+        section_failed.innerHTML = innerHTML;
+        section_failed.style.display = "flex";
+        console.log(failed_list);
+    }else{
+    }
+    display_training();
+    meaning.innerHTML = "";
+}
+
+function Check(){
+    waiting_answer = false;
+    switch (select_type.value){
+        case "kanji_to_hiragana":
+            if(k_input.value == random_list[randomCurrentIndex].kana){
+                answer.innerHTML = `<span class="vert">${random_list[randomCurrentIndex].kana}</span>`;
+                score++;
+            }else{
+                failed_list.push(random_list[randomCurrentIndex])
+                answer.innerHTML = `<span class="rouge">${random_list[randomCurrentIndex].kana}</span>`;
+            }
+            break;
+        case "fr_to_kana":
+            if(k_input.value == random_list[randomCurrentIndex].kana){
+                answer.innerHTML = `<span class="vert">${random_list[randomCurrentIndex].kana}</span>`;
+                score++;
+            }else{
+                answer.innerHTML = `<span class="rouge">${random_list[randomCurrentIndex].kana}</span>`;
+            }
+            break;
+    }
+    k_input.value = "";
+    meaning.innerHTML = random_list[randomCurrentIndex].french;
+}
+
