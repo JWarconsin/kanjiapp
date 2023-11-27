@@ -17,8 +17,11 @@ let btn_enter = document.getElementById("btn_enter");
 let randomCurrentIndex = 0;
 let waiting_answer = true;
 let meaning = document.getElementById("meaning");
+let Hscore = document.getElementById("Hscore");
 let score = 0;
 let section_failed = document.getElementById("section_failed");
+let progression_bar = document.getElementById("progression_bar");
+let progression = 1;
 btn_enter.addEventListener("click",e=>{
     if(waiting_answer){
         Check();
@@ -112,7 +115,7 @@ function createMinna(pFile) {
         innerHTML += `<option value="${i+1}">Leçon ${lesson_list[i]}</option>`
     }
     select_lesson.innerHTML = innerHTML;
-    console.log(lesson_list);
+   
 }
 
 function OpenPopUp(id, liste){
@@ -207,8 +210,13 @@ function All(){
 function Start(){
     section_failed.innerHTML = "";
     score = 0;
+    progression = 1;
+    progression_bar.style.width = `${(progression/random_list.length)*100}%`;
+    failed_list = [];
+    meaning.innerHTML = "";
     randomCurrentIndex = 0;
-    random_list = []
+    random_list = [];
+    Hscore.style.display = "flex";
     for(let i = 0;i < word_list.length ; i++){
         if(word_list[i].lesson == select_lesson.value || select_lesson.value == 0)
         {
@@ -216,6 +224,9 @@ function Start(){
         }
     }
     random_list = zt_randomizeList(random_list);
+    answer.style.display = "flex";
+    devine_moi.style.display = "flex";
+    meaning.style.display = "flex";
     display_training();
     switch (select_type.value){
     case "kanji_to_hiragana":
@@ -270,9 +281,10 @@ function Next(){
         
     }
     randomCurrentIndex++;
+    progression++;
     if(randomCurrentIndex == random_list.length){
         randomCurrentIndex = 0;
-        alert(`score : ${score}/${random_list.length}`);
+        // alert(`score : ${score}/${random_list.length}`);
         n_keyboard_container.style.display = "none";
         let innerHTML = "";
         innerHTML = "<ul>";
@@ -282,11 +294,13 @@ function Next(){
         innerHTML += "</ul>";
         section_failed.innerHTML = innerHTML;
         section_failed.style.display = "flex";
-        console.log(failed_list);
+        devine_moi.style.display = "none";
+        answer.style.display = "none";
     }else{
     }
     display_training();
     meaning.innerHTML = "";
+    k_input.value = "";
 }
 
 function Check(){
@@ -310,7 +324,9 @@ function Check(){
             }
             break;
     }
-    k_input.value = "";
+     progression_bar.style.width = `${(progression/random_list.length)*100}%`;
+    Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
     meaning.innerHTML = random_list[randomCurrentIndex].french;
 }
+
 
