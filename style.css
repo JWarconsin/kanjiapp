@@ -14,20 +14,22 @@
   
   header {
     
-    background-color: #604088;
+    background-color: black;
     padding: 10px;
     position: fixed;
     top: 0px;
     width: 100%;
     /* height: 100px; */
+
   }
   
   body{
     background-color: black;
+      border: #604088 2px solid;
   }
   nav {
     text-align: center;
-  
+      
   }
 
 
@@ -36,11 +38,12 @@
     margin: 5px;
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #492ed2;
-    color: white;
+    background-color: #604088;
+    color: yellow;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(138, 135, 135, 0.7);
     
   }
   
@@ -69,15 +72,17 @@
     margin-left: 10px;
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #492ed2;
-    color: white;
+    background-color: #604088;
+    color: rgb(166, 255, 0);
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(138, 135, 135, 0.7);
     
   }
 /* Styles pour les boutons */
 .button_kanji {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -90,29 +95,34 @@
     margin-top: 5px;
     font-size: 35px;
     background-color: #604088;
-    color: white;
+    color: yellow;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    border: white 2px solid;
+    box-shadow: 5px 5px 5px rgba(138, 135, 135, 0.7);
 }
 #section_kanji {
-    margin-top: 70px;
+    margin-top: 80px;
     overflow-y: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
+
 #barrerecherche{
   position: fixed;
-  top: 65px;
+  top: 64px;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: rgb(0, 0, 0);
-  width: 100%; 
+  width: 100%;
   margin: 0 auto;
   border-bottom: 1px solid black;
   /* align-self: center; */
   text-align: center;
+  border: #604088 2px solid;
 
 }
 #PopUp {
@@ -120,14 +130,14 @@
     top: 65px;
     margin-top: 5px;
     margin-left: 19.5px;
-    background-color: rgb(69, 61, 123);
+    background-color: #604088;
     width: 90%;
-     height: 460px; 
-    display: none; 
+     height: 460px;
+    display: none;
     border-radius: 30px;
     padding-bottom: 30px;
     padding-top: 20px;
-    
+    border: yellow 2px solid;
     
 }
 #divkanji {
@@ -138,12 +148,13 @@
 .popupkanji_p{
     margin-top: 25px;
     font-size: 25px ;
-    color: white;
+    color: yellow;
     margin-left: 15px;
     margin-right: 15px;
 }
 .popupkanji_p span{
     font-size: 15px;
+    color: white;
 }
 #section_minna{
     /* margin-top: 65px; */
@@ -174,6 +185,8 @@
   width: 80px;
   height: 80px;
   font-size: 30px;
+  color: yellow;
+  background-color: #604088;
 }
 
 #btn_return {
@@ -187,7 +200,7 @@
   font-size: 50px;
   margin-top: 50px;
   align-self: center;
-  color: blue;
+  color: yellow;
 }
 #filtres{
 /* background-color: #f10000; */
