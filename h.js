@@ -189,6 +189,11 @@ function minna(){
     section_kanji.style.display = "none";
     section_minna.style.display = "flex";
     n_keyboard_container.style.display = "none";
+    meaning.style.display = "none";
+    Hscore.style.display = "none";
+    devine_moi.style.display = "none";
+    answer.style.display = "none";
+    progression_bar.style.width = `0%`;
 
 
     // n_keyboard_container
@@ -211,7 +216,7 @@ function Start(){
     section_failed.innerHTML = "";
     score = 0;
     progression = 1;
-    progression_bar.style.width = `${(progression/random_list.length)*100}%`;
+    
     failed_list = [];
     meaning.innerHTML = "";
     randomCurrentIndex = 0;
@@ -231,15 +236,21 @@ function Start(){
     switch (select_type.value){
     case "kanji_to_hiragana":
         n_keyboard_container.style.display = "flex";
+        devine_moi.style.fontSize = "50px";
+        
         break;
     case "fr_to_kana":
         n_keyboard_container.style.display = "flex";
+        devine_moi.style.fontSize = "15px";
+        
         break;
     case "kanji_to_kami":
         n_keyboard_container.style.display = "none";
+        Hscore.style.display = "none";
         break;
     }
-
+    Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
+    progression_bar.style.width = `${(progression/random_list.length)*100}%`;
 }
 
 function zt_randomizeList(pList) {
@@ -314,6 +325,7 @@ function Check(){
                 failed_list.push(random_list[randomCurrentIndex])
                 answer.innerHTML = `<span class="rouge">${random_list[randomCurrentIndex].kana}</span>`;
             }
+            meaning.innerHTML = random_list[randomCurrentIndex].french;
             break;
         case "fr_to_kana":
             if(k_input.value == random_list[randomCurrentIndex].kana){
@@ -322,11 +334,12 @@ function Check(){
             }else{
                 answer.innerHTML = `<span class="rouge">${random_list[randomCurrentIndex].kana}</span>`;
             }
+            meaning.innerHTML = random_list[randomCurrentIndex].kanji;
             break;
     }
      progression_bar.style.width = `${(progression/random_list.length)*100}%`;
-    Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
-    meaning.innerHTML = random_list[randomCurrentIndex].french;
+     Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
+   
 }
 
 

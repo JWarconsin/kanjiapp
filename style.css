@@ -14,7 +14,7 @@
   
   header {
     
-    background-color: #f10000;
+    background-color: #604088;
     padding: 10px;
     position: fixed;
     top: 0px;
@@ -22,6 +22,9 @@
     /* height: 100px; */
   }
   
+  body{
+    background-color: black;
+  }
   nav {
     text-align: center;
   
@@ -33,7 +36,7 @@
     margin: 5px;
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #4caf50;
+    background-color: #492ed2;
     color: white;
     border: none;
     border-radius: 4px;
@@ -66,7 +69,7 @@
     margin-left: 10px;
     padding: 8px 16px;
     font-size: 16px;
-    background-color: #4caf50;
+    background-color: #492ed2;
     color: white;
     border: none;
     border-radius: 4px;
@@ -86,7 +89,7 @@
     padding: 5px;
     margin-top: 5px;
     font-size: 35px;
-    background-color: #4caf50;
+    background-color: #604088;
     color: white;
     border: none;
     border-radius: 4px;
@@ -104,7 +107,7 @@
   top: 65px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   width: 100%; 
   margin: 0 auto;
   border-bottom: 1px solid black;
@@ -117,9 +120,9 @@
     top: 65px;
     margin-top: 5px;
     margin-left: 19.5px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(69, 61, 123);
     width: 90%;
-     height: 710px; 
+     height: 460px; 
     display: none; 
     border-radius: 30px;
     padding-bottom: 30px;
@@ -184,6 +187,7 @@
   font-size: 50px;
   margin-top: 50px;
   align-self: center;
+  color: blue;
 }
 #filtres{
 /* background-color: #f10000; */
@@ -230,15 +234,21 @@ display: flex;
   display: none;
   margin-top: 65px;
 }
+
+#section_failed li{
+  color: white;
+}
+
 #Hscore{
   display: none;
-  
+  color: white;
 }
 #answer{
   align-self: center;
 }
 #meaning{
   align-self: center;
+  color: white;
 }
 #progression_bar{
   background-color: #00ff1e;
