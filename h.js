@@ -39,8 +39,8 @@ search_input.addEventListener("keydown",e=>{
 // e.code="Enter"
 let search_list = [];
 popup = document.getElementById("PopUp");
-readFile("日本語 - ぼＢ.tsv", "KANJI");
 readFile("日本語 - みんなの日本語.tsv", "MINNA");
+
 
 
 
@@ -78,12 +78,18 @@ function createKanji(pFile) {
         kunyomi: row[i][2],
         rei: row[i][3],
         exemple: row[i][4],
-        Francais:row[i][5]
+        Francais: row[i][5],
+        wordlistdukanjiaufinal: []
       };
+      for(let j = 0;j < word_list.length ; j++){
+            if(word_list[j].kanji.includes(kanji.kanji)){
+                kanji.wordlistdukanjiaufinal.push(word_list[j]);
+            }
+      }
       kanji_list.push(kanji);
        //list.push(row[i][0]);
-       
     }
+    console.log(kanji_list);
     kanji_search();
 }
 
@@ -115,7 +121,7 @@ function createMinna(pFile) {
         innerHTML += `<option value="${i+1}">Leçon ${lesson_list[i]}</option>`
     }
     select_lesson.innerHTML = innerHTML;
-   
+    readFile("日本語 - ぼＢ.tsv", "KANJI");
 }
 
 function OpenPopUp(id, liste){
@@ -130,6 +136,17 @@ function OpenPopUp(id, liste){
     <p class = "popupkanji_p"><span>例 : </span>${liste[id].exemple}</p> 
     <p class = "popupkanji_p"><span>フランス語 : </span>${liste[id].Francais}</p>
     `;
+    innerHTML += `<p class = "popupkanji_p">`;
+    let wordlistaufinal = "";
+    for(let i = 0;i < liste[id].wordlistdukanjiaufinal.length ; i++){
+        if(i == liste[id].wordlistdukanjiaufinal.length-1){
+            wordlistaufinal += liste[id].wordlistdukanjiaufinal[i].kanji;
+        }else{
+            wordlistaufinal += liste[id].wordlistdukanjiaufinal[i].kanji+"、";
+        }
+    }
+    innerHTML += wordlistaufinal;
+     innerHTML += "</p>";
     popup.innerHTML = innerHTML;
     // popup.innerHTML = kanji_list[id].kanji
 

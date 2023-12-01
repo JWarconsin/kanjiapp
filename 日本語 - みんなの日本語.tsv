@@ -1,9 +1,9 @@
 漢字	ひらがな	フランス語
 @1		
 私	わたし	Je
-～人	じん	Personne
+～人	じん	Personne (nationalité)
 先生	せんせい	Professeur
-教師	きょうし	Professeur
+教師	きょうし	Professeur (soi-même)
 学生	がくせい	Étudiant
 会社員	かいしゃいん	Employé d'une entreprise
 社員	しゃいん	Employé
@@ -11,12 +11,13 @@
 医者	いしゃ	Médecin
 研究者	けんきゅうしゃ	Chercheur
 大学	だいがく	Université
-病院	びょういん	Hopital
-歳	さい	Année
-何歳	なんさい	Quelle année
+病院	びょういん	Hôpital
+歳	さい	-an(s) (âge)
+何歳	なんさい	Quel âge ?
 初めまして	はじめまして	Enchanté
-失礼	しつれい	Excuse
-名前	なまえ	Nom
+失礼	しつれい	Impoli
+名前	なまえ	Nom, prénom
+誰	だれ	Qui
 @2		
 本	ほん	Livre
 辞書	じしょ	Dictionnaire
@@ -29,247 +30,251 @@
 傘	かさ	Parapluie
 車	くるま	Voiture
 机	つくえ	Bureau (table)
-土産	おみやげ	(Cadeau) Souvenir
+お土産	おみやげ	Souvenir, cadeau
 英語	えいご	Langue anglaise
 日本語	にほんご	Langue japonaise
 〜語	ご	Langue ~
 @3	ゲイ	
-教室	きょうしつ	
-食堂	しょくどう	
-事務所	じむしょ	
+教室	きょうしつ	Salle de cours
+食堂	しょくどう	Restaurant, cantine
+事務所	じむしょ	Bureau (lieu)
 会議室	かいぎしつ	Salle de réunion
-受付	うけつけ	
-部屋	へや	
-階段	かいだん	
-自動販売機	じどうはんばいき	
-電話	でんわ	
-国	くに	
-会社	かいしゃ	
-靴	くつ	
-売り場	うりば	
-地下	ちか	
-階	かい	
-何階	なんがい	
-円	えん	
-百	ひゃく	
-千	せん	
-万	まん	
+受付	うけつけ	Accueil
+部屋	へや	Salle, chambre
+階段	かいだん	Escalier
+自動販売機	じどうはんばいき	Distributeur automatique
+電話	でんわ	Téléphone
+国	くに	Pays
+会社	かいしゃ	Entreprise, société
+靴	くつ	Chaussure
+売り場	うりば	Rayon (magasin)
+地下	ちか	Sous-sol
+～階	かい	-étage
+何階	なんがい	Quel étage
+円	えん	-yen
+百	ひゃく	Cent
+千	せん	Mille
+万	まん	Dix mille
 @4		
-起きます	おきます	
-寝ます	ねます	
-働きます	はたらきます	
-休みます	やすみます	
-勉強します	べんきょうします	
-銀行	ぎんこう	
-郵便局	ゆうびんきょく	
-図書館	としょかん	
-美術館	びじゅつかん	
-今	いま	
-〜時	じ	
-〜分	ふん	
-半	はん	
-何時	なんじ	
-何分	なんふん	
-午前	ごぜん	
-午後	ごご	
-朝	あさ	
-昼	ひる	
-晩	ばん	
-夜	よる	
-今晩	こんばん	
-休み	やすみ	
-昼休み	ひるやすみ	
-試験	しけん	
-会議	かいぎ	
-映画	えいが	
-毎朝	まいあさ	
-毎晩	まいばん	
-毎日	まいにち	
-月曜日	げつようび	
-火曜日	かようび	
-水曜日	すいようび	
-木曜日	もくようび	
-金曜日	きんようび	
-土曜日	どようび	
-日曜日	にちようび	
-何曜日	なんようび	
+起きます	おきます	Se lever, se réveiller
+寝ます	ねます	Dormir, se coucher
+働きます	はたらきます	Travailler
+休みます	やすみます	Se reposer, prendre un congé
+勉強します	べんきょうします	Étudier
+終わります	おわります	Se terminer, finir
+銀行	ぎんこう	Banque
+郵便局	ゆうびんきょく	Bureau de poste
+図書館	としょかん	Bibliothèque
+美術館	びじゅつかん	Musée
+今	いま	Maintenant
+〜時	じ	-Heure(s)
+〜分	ふん	-Minute(s)
+半	はん	Demie (30 minutes)
+何時	なんじ	Quelle heure
+何分	なんぷん	Combien de minutes
+午前	ごぜん	Matin, du matin, matinée
+午後	ごご	Après-midi
+朝	あさ	Matin
+昼	ひる	Midi, jour, journée
+晩	ばん	Nuit
+夜	よる	Soir
+今晩	こんばん	Ce soir
+休み	やすみ	Repos, vacances, congé
+昼休み	ひるやすみ	Pause du midi
+試験	しけん	Examen
+会議	かいぎ	Réunion
+映画	えいが	Cinéma, film
+毎朝	まいあさ	Tous les matins
+毎晩	まいばん	Tous les soirs
+毎日	まいにち	Tous les jours
+月曜日	げつようび	Lundi
+火曜日	かようび	Mardi
+水曜日	すいようび	Mercredi
+木曜日	もくようび	Jeudi
+金曜日	きんようび	Vendredi
+土曜日	どようび	Samedi
+日曜日	にちようび	Dimanche
+何曜日	なんようび	Quel jour de la semaine
 @5		
-行きます	いきます	
-来ます	きます	
+行きます	いきます	Aller
+来ます	きます	Venir
 帰ります	かえります	Rentrer
 変えます	かえます	Changer
-学校	がっこう	
-駅	えき	
-飛行機	ひこうき	
-船	ふね	
-電車	でんしゃ	
-地下鉄	ちかてつ	
-新幹線	しんかんせん	
-自転車	じてんしゃ	
-歩いて	あるいて	
-人	ひと	
-友達	ともだち	
-彼	かれ	
-彼女	かのじょ	
-家族	かぞく	
-一人で	ひとりで	
-先週	せんしゅう	
-今週	こんしゅう	
-来週	らいしゅう	
-先月	せんげつ	
-今月	こんげつ	
-来月	らいげつ	
-去年	きょねん	
-来年	らいねん	
-〜年	ねん	
-何年	なんねん	
-～月	がつ	
-何月	なんがつ	
-誕生日	たんじょうび	
+学校	がっこう	Ecole
+駅	えき	Gare, Station
+飛行機	ひこうき	Avion
+船	ふね	Bateau
+電車	でんしゃ	Train
+地下鉄	ちかてつ	Métro
+新幹線	しんかんせん	Shinkansen (TGV japonais)
+自転車	じてんしゃ	Bicyclette, vélo
+歩いて	あるいて	À pied
+人	ひと	Personne, gens
+友達	ともだち	Ami(e)
+彼	かれ	Lui, Il, Petit ami
+彼女	かのじょ	Elle, Petite amie
+家族	かぞく	Famille
+一人で	ひとりで	Seul(e), par soi-même
+先週	せんしゅう	La semaine dernière
+今週	こんしゅう	Cette semaine
+来週	らいしゅう	La semaine prochaine
+先月	せんげつ	Le mois dernier
+今月	こんげつ	Ce mois
+来月	らいげつ	Le mois prochain
+去年	きょねん	L'année dernière
+来年	らいねん	L'année prochaine
+〜年	ねん	(l'année)-
+何年	なんねん	Quelle année
+～月	がつ	(Le mois de) -
+何月	なんがつ	Quel mois
+何日	なんにち	Quel jour du mois, combien de jours
+誕生日	たんじょうび	Anniversaire
 @6		
-食べます		
-飲みます		
-吸います		
-見ます		
-聞きます		
-読みます		
-書きます		
-買います		
-撮ります		
-会います		
-朝ごはん		
-昼ごはん		
-晩ごはん		
-卵		
-肉		
-魚		
-野菜		
-果物		
-水		
-お茶		
-紅茶		
-牛乳		
-お酒		
-手紙		
-写真		
-店		
-庭		
-宿題		
-お花見		
-何		
-時々		
+食べます	たべます	Manger
+飲みます	のみます	Boire
+吸います	すいます	Fumer [une cigarette]
+見ます	みます	Regarder, voir
+聞きます	ききます	Ecouter
+読みます	よみます	Lire
+書きます	かきます	Ecrire
+買います	かいます	Acheter
+撮ります	とります	Prendre [une photo]
+写真を撮ります	しゃしんをとります	Prendre une photo
+会います	あいます	Rencontrer
+友達に会います	ともどちにあいます	Rencontrer, voir un(e) ami(e)
+朝ごはん	あさごはん	Petit déjeuner
+昼ごはん	ひるごはん	Déjeuner
+晩ごはん	ばんごはん	Dîner
+卵	たまご	Oeuf
+肉	にく	Viande
+魚	さかな	Poisson
+野菜	やさい	Légume
+果物	くだもの	Fruit
+水	みず	Eau
+お茶	おちゃ	Thé, thé vert
+紅茶	こうちゃ	Thé anglais
+牛乳	ぎゅうにゅう	Lait
+お酒	おさけ	Alcool, Saké japonais
+手紙	てがみ	Lettre
+写真	しゃしん	Photo
+店	みせ	Magasin
+庭	にわ	Jardin
+宿題	しゅくだい	Devoir
+お花見	おはなみ	Contemplation des fleurs de cerisiers
+何	なに	Que, Quoi
+時々	ときどき	De temps en temps, parfois
 @7		
-切ります		
-送ります		
-貸します		
-借ります		
-教えます		
-習います		
-手		
-年賀中		
-消しゴム	けしゴム	
-紙		
-花		
-荷物		
-お金		
-切符		
-父		
-母		
-お父さん		
-お母さん		
+切ります	きります	Couper, Découper
+送ります	おくります	Envoyer
+貸します	かします	Prêter, louer
+借ります	かります	Emprunter
+教えます	おしえます	Enseigner, apprendre
+習います	ならいます	Apprendre ( par quelqu'un)
+手	て	Main
+年賀状	ねんがじょう	Carte de voeux
+消しゴム	けしゴム	Gomme à effacer
+紙	かみ	Feuille, papier
+花	はな	Fleur
+荷物	にもつ	Bagage
+お金	おかね	Argent
+切符	きっぷ	Billet, Ticket
+父	ちち	Père, mon père
+母	はは	Mère, ma mère
+お父さん	おとうさん	Père (le père de quelqu'un d'autre)
+お母さん	おかあさん	Mère (la mère de quelqu'un d'autre)
 @8		
-静かな		
-有名な		
-新設な		
-元気な		
-暇な		
-便利な		
-大きい		
-小さい		
-新しい		
-古い		
-悪い		
-熱い		Chaud (au toucher) 
-暑い		Chaud (Température) 
-寒い		
-冷たい		
-難しい		
-易しい		
-高い		
-安い		
-低い		
-忙しい		
-楽しい		
-白い		
-黒い		
-赤い		
-青い		
-桜		
-山		
-町		
-食べ物		
-所		
-寮		
-生活		
-お仕事		
+静かな	しずかな	Calme
+有名な	ゆうめいな	Célèbre
+新設な	しんせつな	Gentil
+元気な	げんきな	En forme, vif, énergique
+暇な	ひまな	Libre (avoir du temps)
+便利な	べんりな	Pratique, commode
+大きい	おおきい	Grand
+小さい	ちいさい	Petit
+新しい	あたらしい	Nouveau, neuf, frais
+古い	ふるい	Vieux, ancien
+悪い	わるい	Mauvais
+熱い	あつい	Chaud (au toucher) 
+暑い	あつい	Chaud (Température) 
+寒い	さむい	Froid(le temps "il fait froid")
+冷たい	つめたい	Froid(la sensation au contact d'un objet)
+難しい	むずかし	Difficile
+易しい	やさしい	Facile, simple
+高い	たかい	Haut, élevé, cher, coûteux
+安い	やすい	Bon marché, pas cher
+低い	ひくい	Bas
+忙しい	いそがしい	Occupé, pris
+楽しい	たのしい	Agréable (comme activité)
+白い	しろい	Blanc
+黒い	くろい	Noir
+赤い	あかい	Rouge
+青い	あおい	Bleu
+桜	さくら	Cerisier, fleur de cerisier
+山	やま	Montagne
+町	まち	Ville, bourg, quartier
+食べ物	たべもの	Nourriture, aliment
+所	ところ	Endroit
+寮	りょう	Résidence, pension, internat
+生活	せいかつ	Vie (quotidienne)
+お仕事	おしごと	Travail, métier
 @9		
-好きな		
-浚いな		
-上手な		
-下手な		
-飲み物		
-料理		
-野球		
-旅行		
-音楽		
-歌		
-歌舞伎		
-絵		
-字		
-漢字		
-ローマ字		
-細かいお金		
-時間		
-用事		
-約束		
-ご主人		
-夫		
-主人		
-奥さん		
-妻		
-家内		
-子供		
-少し		
-全然		
-早く		
-速く		
+好きな	すきな	Aimé, favori
+浚いな	きらいな	Détesté
+上手な	しょうずな	Habile
+下手な	へたな	Maladroit
+飲み物	のみもの	Boisson
+料理	りょうり	Cuisine
+野球	やきゅう	Baseball
+旅行	りょこう	Voyage
+音楽	おんがく	Musique
+歌	うた	Chanson
+歌舞伎	かぶき	kabuki (théâtre traditionnel japonais)
+絵	え	Peinture
+字	じ	Lettre, caractère
+漢字	かんじ	Caractère chinois
+ローマ字	ローマじ	Transcription romanisée
+細かいお金	こまかいおかね	Petite monnaie, billet, ticket
+時間	じかん	Temps, heure
+用事	ようじ	Quelque chose à faire
+約束	やくそく	Rendez-vous, promesse
+ご主人	ごしゅじん	Mari (de quelqu'un d'autre)
+夫	おっと	(mon) Mari
+主人	しゅじん	Responsable d'un endroit
+奥さん	おくさん	Femme (de quelqu'un d'autre)
+妻(1)	つま	(ma) Femme
+家内(2)	なかい	(ma) Femme
+子供	こども	Enfant
+少し	すこし	Un peu
+全然	ぜんぜん	Pas du tout
+早く	はやく	Tôt
+速く	はやく	Vite
 @10		
-男の子		
-女の子		
-女の人		
-男の人		
-犬		
-猫		
-像		
-木		
-物		
-電池		
-箱		
-冷蔵庫		
-棚		
-窓		
-公園		
-喫茶店		
-~屋		
-乗り場		
-県		
-上		
-下		
-前		
-左		
-右		
-中		
-外		
-隣		
-近く		
-間		
+男の子	おとこのこ	Garçon
+女の子	おんあのこ	Fille
+女の人	おんあのひと	Femme
+男の人	おとうこのひと	Homme
+犬	いぬ	Chien
+猫	ねこ	Chat
+像	ぞう	Éléphant
+木	き	Arbre
+物	もの	Chose
+電池	でんち	Pile
+箱	はこ	Boîte
+冷蔵庫	れいぞうこ	Réfrigérateur
+棚	たな	Étagère
+窓	まど	Fenêtre
+公園	こうえん	Parc
+喫茶店	きっさてん	Café, salon de thé
+~屋	~や	Magasin de ~
+乗り場	のりば	Arrêt, emplacement pour prendre le taxi, le bus
+県	けん	Préfecture
+上	うえ	Dessus, sur , en haut
+下	した	Dessous, sous, en bas
+前	まえ	Devant, en face
+左	ひだり	Gauche
+右	みぎ	Droite
+中	なか	Intérieur, dedans, dans
+外	そと	Extérieur, dehors
+隣	となり	À côté, voisin
+近く	ちかく	Proximité, près
+間	あいだ	Entre, parmi
