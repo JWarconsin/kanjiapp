@@ -21,6 +21,9 @@ let Hscore = document.getElementById("Hscore");
 let score = 0;
 let section_failed = document.getElementById("section_failed");
 let progression_bar = document.getElementById("progression_bar");
+let button_vocabulaire = document.getElementById("button_vocabulaire");
+let section_vocabulaire = document.getElementById("section_vocabulaire");
+let popup_voc = document.getElementById("popup_voc");
 let progression = 1;
 btn_enter.addEventListener("click",e=>{
     if(waiting_answer){
@@ -89,7 +92,6 @@ function createKanji(pFile) {
       kanji_list.push(kanji);
        //list.push(row[i][0]);
     }
-    console.log(kanji_list);
     kanji_search();
 }
 
@@ -151,8 +153,25 @@ function OpenPopUp(id, liste){
     // popup.innerHTML = kanji_list[id].kanji
 
 }
+
+function OpenPopUp_voc(id, liste){
+    popup_voc.style.display = "block";
+    popup_voc.innerHTML = "";
+    let innerHTML;
+    innerHTML = `
+    <div id = "divkanji"><p>${liste[id].kanji}</p></div>
+    <p class = "popupkanji_p"><span>仮名 : </span>${liste[id].kana}</p>
+    <p class = "popupkanji_p"><span>フランス語 : </span>${liste[id].french}</p> 
+    `;
+    popup_voc.innerHTML = innerHTML;
+}
+
 function closepopup(){
     popup.style.display = "none";
+}
+
+function closepopup_voc(){
+    popup_voc.style.display = "none";
 }
 
 function kanji_search(){
@@ -204,6 +223,7 @@ function kanji_search(){
 
 function minna(){
     section_kanji.style.display = "none";
+    section_vocabulaire.style.display = "none";
     section_minna.style.display = "flex";
     n_keyboard_container.style.display = "none";
     meaning.style.display = "none";
@@ -226,6 +246,7 @@ function All(){
     section_kanji.style.display = "flex";
     section_minna.style.display = "none";
     n_keyboard_container.style.display = "none";
+    section_vocabulaire.style.display = "none";
 
 }
 
@@ -359,4 +380,20 @@ function Check(){
    
 }
 
+function vocabulaire(){
+    section_kanji.style.display = "none";
+    section_minna.style.display = "none";
+    section_vocabulaire.style.display = "flex";
+    
+    let innerHTML = "";
+    button_vocabulaire.innerHTML = "";
+    innerHTML = ""
+    for(let i = 0;i < word_list.length ; i++){
+        innerHTML += `<button id = "${i}" onclick="OpenPopUp_voc(${i},word_list)">${word_list[i].kanji}</button>`;
+    }
+    button_vocabulaire.innerHTML = innerHTML;
+}
 
+function vocabulaire_search(){
+
+}

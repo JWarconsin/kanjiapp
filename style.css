@@ -269,3 +269,34 @@ display: flex;
   width: 0%;
   display: flex;
 }
+#section_vocabulaire{
+  padding-top: 10px;
+  color: white;
+}
+ .button_vocabulaire button {
+  /* width: calc(25% - 10px); */
+  padding: 5px;
+  margin-top: 15px;
+  font-size: 20px;
+  background-color: #604088;
+  color: yellow;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: white 2px solid;
+  box-shadow: 5px 5px 5px rgba(138, 135, 135, 0.7);
+}
+#popup_voc{
+  position: fixed;
+    top: 65px;
+    margin-top: 5px;
+    margin-left: 19.5px;
+    background-color: #604088;
+    width: 90%;
+     height: 300px;
+    display: none;
+    border-radius: 30px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    border: yellow 2px solid;
+}

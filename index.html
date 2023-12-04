@@ -11,6 +11,7 @@
         <nav>
             <button id="bglobal" onclick="All()">Tout</button>
             <button id="bminna" onclick="minna()">みんなの日本語</button>
+            <button id="Liste vocabulaire" onclick="vocabulaire()">Voc</button>
             <!-- <button id="bJLPT">JLPT</button> -->
         </nav>
     </header>
@@ -80,10 +81,18 @@
     </section>
     <section id="section_failed">
     </section>
-    <section id="JLPT">
+    <section id="section_vocabulaire">
+        <div id="barrerecherche">
+            <input id="search_input_vocabulaire" type="text">
+            <button id="Search" onclick="vocabulaire_search()">Rechercher</button>
+        </div>
+        <div id="button_vocabulaire" class="button_vocabulaire" >
+        </div>
     </section>
     <div id="PopUp" onclick = "closepopup()">
     </div> 
+    <div id="popup_voc" onclick = "closepopup_voc()">
+    </div>
 </body>
 </html>
 <script src="h.js"></script>

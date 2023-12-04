@@ -34,7 +34,7 @@
 英語	えいご	Langue anglaise
 日本語	にほんご	Langue japonaise
 〜語	ご	Langue ~
-@3	ゲイ	
+@3		
 教室	きょうしつ	Salle de cours
 食堂	しょくどう	Restaurant, cantine
 事務所	じむしょ	Bureau (lieu)
@@ -185,7 +185,7 @@
 @8		
 静かな	しずかな	Calme
 有名な	ゆうめいな	Célèbre
-新設な	しんせつな	Gentil
+親切な	しんせつな	Gentil
 元気な	げんきな	En forme, vif, énergique
 暇な	ひまな	Libre (avoir du temps)
 便利な	べんりな	Pratique, commode
@@ -198,7 +198,7 @@
 暑い	あつい	Chaud (Température) 
 寒い	さむい	Froid(le temps "il fait froid")
 冷たい	つめたい	Froid(la sensation au contact d'un objet)
-難しい	むずかし	Difficile
+難しい	むずかしい	Difficile
 易しい	やさしい	Facile, simple
 高い	たかい	Haut, élevé, cher, coûteux
 安い	やすい	Bon marché, pas cher
@@ -219,8 +219,8 @@
 お仕事	おしごと	Travail, métier
 @9		
 好きな	すきな	Aimé, favori
-浚いな	きらいな	Détesté
-上手な	しょうずな	Habile
+嫌いな	きらいな	Détesté
+上手な	じょうずな	Habile
 下手な	へたな	Maladroit
 飲み物	のみもの	Boisson
 料理	りょうり	Cuisine
@@ -229,7 +229,7 @@
 音楽	おんがく	Musique
 歌	うた	Chanson
 歌舞伎	かぶき	kabuki (théâtre traditionnel japonais)
-絵	え	Peinture
+絵	え	Peinture, dessin
 字	じ	Lettre, caractère
 漢字	かんじ	Caractère chinois
 ローマ字	ローマじ	Transcription romanisée
@@ -242,7 +242,7 @@
 主人	しゅじん	Responsable d'un endroit
 奥さん	おくさん	Femme (de quelqu'un d'autre)
 妻(1)	つま	(ma) Femme
-家内(2)	なかい	(ma) Femme
+家内(2)	かない	(ma) Femme
 子供	こども	Enfant
 少し	すこし	Un peu
 全然	ぜんぜん	Pas du tout
@@ -250,9 +250,9 @@
 速く	はやく	Vite
 @10		
 男の子	おとこのこ	Garçon
-女の子	おんあのこ	Fille
-女の人	おんあのひと	Femme
-男の人	おとうこのひと	Homme
+女の子	おんなのこ	Fille
+女の人	おんなのひと	Femme
+男の人	おとこのひと	Homme
 犬	いぬ	Chien
 猫	ねこ	Chat
 像	ぞう	Éléphant
