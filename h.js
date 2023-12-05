@@ -24,6 +24,7 @@ let progression_bar = document.getElementById("progression_bar");
 let button_vocabulaire = document.getElementById("button_vocabulaire");
 let section_vocabulaire = document.getElementById("section_vocabulaire");
 let popup_voc = document.getElementById("popup_voc");
+let search_input_vocabulaire = document.getElementById("search_input_vocabulaire");
 let progression = 1;
 btn_enter.addEventListener("click",e=>{
     if(waiting_answer){
@@ -79,9 +80,7 @@ function createKanji(pFile) {
         kanji: row[i][0],
         onyomi: row[i][1],
         kunyomi: row[i][2],
-        rei: row[i][3],
-        exemple: row[i][4],
-        Francais: row[i][5],
+        Francais: row[i][3],
         wordlistdukanjiaufinal: []
       };
       for(let j = 0;j < word_list.length ; j++){
@@ -123,7 +122,7 @@ function createMinna(pFile) {
         innerHTML += `<option value="${i+1}">Leçon ${lesson_list[i]}</option>`
     }
     select_lesson.innerHTML = innerHTML;
-    readFile("日本語 - ぼＢ.tsv", "KANJI");
+    readFile("日本語 - ちえり.tsv", "KANJI");
 }
 
 function OpenPopUp(id, liste){
@@ -134,8 +133,6 @@ function OpenPopUp(id, liste){
     <div id = "divkanji"><p>${liste[id].kanji}</p></div>
     <p class = "popupkanji_p"><span>音読み : </span>${liste[id].onyomi}</p> 
     <p class = "popupkanji_p"><span>訓読み : </span>${liste[id].kunyomi}</p>
-    <p class = "popupkanji_p"><span>れい : </span>${liste[id].rei}</p> 
-    <p class = "popupkanji_p"><span>例 : </span>${liste[id].exemple}</p> 
     <p class = "popupkanji_p"><span>フランス語 : </span>${liste[id].Francais}</p>
     `;
     innerHTML += `<p class = "popupkanji_p">`;
@@ -384,16 +381,56 @@ function vocabulaire(){
     section_kanji.style.display = "none";
     section_minna.style.display = "none";
     section_vocabulaire.style.display = "flex";
-    
-    let innerHTML = "";
-    button_vocabulaire.innerHTML = "";
-    innerHTML = ""
-    for(let i = 0;i < word_list.length ; i++){
-        innerHTML += `<button id = "${i}" onclick="OpenPopUp_voc(${i},word_list)">${word_list[i].kanji}</button>`;
-    }
-    button_vocabulaire.innerHTML = innerHTML;
+    search_input_vocabulaire.value = ""
+    // button_vocabulaire.innerHTML = "";
+    // let innerHTML = "";
+    // innerHTML = ""
+    // for(let i = 0;i < word_list.length ; i++){
+    //     innerHTML += `<button id = "${i}" onclick="OpenPopUp_voc(${i},word_list)">${word_list[i].kanji}</button>`;
+    // }
+    // button_vocabulaire.innerHTML = innerHTML;
+    vocabulaire_search();
 }
 
 function vocabulaire_search(){
+
+    if(search_input_vocabulaire.value == ""){
+        button_vocabulaire.innerHTML = "";
+        let innerHTML = "";
+        innerHTML = ""
+        for(let i = 0;i < word_list.length ; i++){
+            if (i != 0 && word_list[i].lesson != word_list[i-1].lesson){
+                innerHTML += `<h2 class="Titre_separation">Leçon ${word_list[i].lesson}</h2>`;
+            }
+            innerHTML += `<button id = "${i}" onclick="OpenPopUp_voc(${i},word_list)">${word_list[i].kanji}</button>`;
+        }
+        button_vocabulaire.innerHTML = innerHTML;
+    } else {
+        search_list = [];
+        for(let i = 0; i < word_list.length-1 ; i++)
+        {
+            if (i==1){console.log(word_list[i].kanji);}
+            if(word_list[i].kanji.includes(search_input_vocabulaire.value))
+            {
+                search_list.push(word_list[i]);
+            }
+            else if(word_list[i].kana.includes(search_input_vocabulaire.value))
+            {
+                search_list.push(word_list[i]);
+            }
+            else if(word_list[i].french.includes(search_input_vocabulaire.value))
+            {
+                search_list.push(word_list[i]);
+            }
+        }
+        button_vocabulaire.innerHTML = "";
+        let innerHTML = "";
+        for(let i = 0;i < search_list.length ; i++)
+        {
+            innerHTML += `<button id = "${i}" onclick="OpenPopUp_voc(${i},search_list)">${search_list[i].kanji}</button>`
+        }
+        button_vocabulaire.innerHTML = innerHTML;
+
+    }
 
 }

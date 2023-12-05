@@ -25,7 +25,7 @@
   
   body{
     background-color: black;
-      border: #604088 2px solid;
+      /* border: #604088 2px solid; */
   }
   nav {
     text-align: center;
@@ -277,6 +277,7 @@ display: flex;
   /* width: calc(25% - 10px); */
   padding: 5px;
   margin-top: 15px;
+  margin-left: 15px;
   font-size: 20px;
   background-color: #604088;
   color: yellow;
@@ -299,4 +300,15 @@ display: flex;
     padding-bottom: 30px;
     padding-top: 20px;
     border: yellow 2px solid;
+}
+
+.button_vocabulaire{
+  margin-top: 60px;
+
+}
+
+.Titre_separation{
+  color: white;
+  padding-top: 15px;
+  margin-left: 15px;
 }
