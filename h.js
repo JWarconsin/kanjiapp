@@ -25,6 +25,8 @@ let button_vocabulaire = document.getElementById("button_vocabulaire");
 let section_vocabulaire = document.getElementById("section_vocabulaire");
 let popup_voc = document.getElementById("popup_voc");
 let search_input_vocabulaire = document.getElementById("search_input_vocabulaire");
+let div_kanjitokami = document.getElementById("div_kanjitokami");
+let section_grammaire = document.getElementById("section_grammaire");
 let progression = 1;
 btn_enter.addEventListener("click",e=>{
     if(waiting_answer){
@@ -44,9 +46,6 @@ search_input.addEventListener("keydown",e=>{
 let search_list = [];
 popup = document.getElementById("PopUp");
 readFile("日本語 - みんなの日本語.tsv", "MINNA");
-
-
-
 
 function readFile(pFile, type) {
     let rawFile = new XMLHttpRequest();
@@ -124,6 +123,8 @@ function createMinna(pFile) {
     select_lesson.innerHTML = innerHTML;
     readFile("日本語 - ちえり.tsv", "KANJI");
 }
+
+
 
 function OpenPopUp(id, liste){
     popup.style.display = "block";
@@ -221,6 +222,7 @@ function kanji_search(){
 function minna(){
     section_kanji.style.display = "none";
     section_vocabulaire.style.display = "none";
+    div_kanjitokami.style.display = "none";
     section_minna.style.display = "flex";
     n_keyboard_container.style.display = "none";
     meaning.style.display = "none";
@@ -242,12 +244,14 @@ function minna(){
 function All(){
     section_kanji.style.display = "flex";
     section_minna.style.display = "none";
+    div_kanjitokami.style.display = "none";
     n_keyboard_container.style.display = "none";
     section_vocabulaire.style.display = "none";
 
 }
 
 function Start(){
+    waiting_answer = true;
     section_failed.innerHTML = "";
     score = 0;
     progression = 1;
@@ -272,16 +276,17 @@ function Start(){
     case "kanji_to_hiragana":
         n_keyboard_container.style.display = "flex";
         devine_moi.style.fontSize = "50px";
-        
+        div_kanjitokami.style.display = "none";
         break;
     case "fr_to_kana":
         n_keyboard_container.style.display = "flex";
         devine_moi.style.fontSize = "15px";
-        
+        div_kanjitokami.style.display = "none";
         break;
     case "kanji_to_kami":
         n_keyboard_container.style.display = "none";
-        Hscore.style.display = "none";
+        // Hscore.style.display = "none";
+        div_kanjitokami.style.display = "flex";
         break;
     }
     Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
@@ -342,6 +347,7 @@ function Next(){
         section_failed.style.display = "flex";
         devine_moi.style.display = "none";
         answer.style.display = "none";
+        div_kanjitokami.style.display = "none";
     }else{
     }
     display_training();
@@ -361,6 +367,7 @@ function Check(){
                 answer.innerHTML = `<span class="rouge">${random_list[randomCurrentIndex].kana}</span>`;
             }
             meaning.innerHTML = random_list[randomCurrentIndex].french;
+            progression_bar.style.width = `${(progression/random_list.length)*100}%`;
             break;
         case "fr_to_kana":
             if(k_input.value == random_list[randomCurrentIndex].kana){
@@ -370,10 +377,15 @@ function Check(){
                 answer.innerHTML = `<span class="rouge">${random_list[randomCurrentIndex].kana}</span>`;
             }
             meaning.innerHTML = random_list[randomCurrentIndex].kanji;
+            progression_bar.style.width = `${(progression/random_list.length)*100}%`;
+            break;
+        case "kanji_to_kami":
+            answer.innerHTML = `${random_list[randomCurrentIndex].kanji}`;
+            answer.style.fontSize = "70px";
             break;
     }
-     progression_bar.style.width = `${(progression/random_list.length)*100}%`;
-     Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
+
+    //  Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
    
 }
 
@@ -381,6 +393,7 @@ function vocabulaire(){
     section_kanji.style.display = "none";
     section_minna.style.display = "none";
     section_vocabulaire.style.display = "flex";
+    div_kanjitokami.style.display = "none";
     search_input_vocabulaire.value = ""
     // button_vocabulaire.innerHTML = "";
     // let innerHTML = "";
@@ -398,6 +411,7 @@ function vocabulaire_search(){
         button_vocabulaire.innerHTML = "";
         let innerHTML = "";
         innerHTML = ""
+        innerHTML += `<h2 class="Titre_separation">Leçon ${word_list[1].lesson}</h2>`
         for(let i = 0;i < word_list.length ; i++){
             if (i != 0 && word_list[i].lesson != word_list[i-1].lesson){
                 innerHTML += `<h2 class="Titre_separation">Leçon ${word_list[i].lesson}</h2>`;
@@ -433,4 +447,31 @@ function vocabulaire_search(){
 
     }
 
+}
+
+function True(){
+    score++;
+    progression_bar.style.width = `${(progression/random_list.length)*100}%`;
+    Hscore.innerHTML = `Score : ${score}/${random_list.length}`;
+    Next();
+}
+function False(){
+    progression_bar.style.width = `${(progression/random_list.length)*100}%`;
+    Next();
+}
+
+function Grammaire(){
+ section_grammaire.style.display = "flex";
+ section_minna.style.display = "none";  
+ section_kanji.style.display = "none";
+ section_vocabulaire.style.display = "none";
+ div_kanjitokami.style.display = "none";
+ n_keyboard_container.style.display = "none";
+ meaning.style.display = "none";
+ Hscore.style.display = "none";
+ devine_moi.style.display = "none";
+ answer.style.display = "none";
+ progression_bar.style.width = `0%`;
+
+ 
 }

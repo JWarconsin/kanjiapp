@@ -12,6 +12,7 @@
             <button id="bglobal" onclick="All()">漢字</button>
             <button id="bminna" onclick="minna()">練習</button>
             <button id="Liste vocabulaire" onclick="vocabulaire()">語彙</button>
+            <button id="grammaire" onclick="Grammaire()">文法</button>
             <!-- <button id="bJLPT">JLPT</button> -->
         </nav>
     </header>
@@ -43,8 +44,14 @@
         <H1 id="devine_moi"></H1>
         <h2 id="answer"></h2>
         <h3 id="meaning"></h3>
-        
-
+        <div id="div_kanjitokami" class="div_kanjitokami">
+            <button id="check" onclick="Check()">Check</button>
+             <div id="button_valid">
+                <button class="div_kanjitokami" onclick="True()">True</button>
+                <button class="div_kanjitokami" onclick="False()">False</button>
+            </div>
+        </div>
+    
         <section id="exo_minna">
             <section id="n_keyboard_container">
                 <input id="keyboard_input" class="keyboard_input" type="text">
@@ -87,6 +94,10 @@
             <button id="Search" onclick="vocabulaire_search()">Rechercher</button>
         </div>
         <div id="button_vocabulaire" class="button_vocabulaire" >
+        </div>
+    </section>
+    <section id="section_grammaire">
+        <div id="button_grammaire" class="button_grammaire" >
         </div>
     </section>
     <div id="PopUp" onclick = "closepopup()">

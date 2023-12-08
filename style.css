@@ -158,7 +158,7 @@
 }
 #section_minna{
     /* margin-top: 65px; */
-    overflow-y: auto;
+    /* overflow-y: auto; */
     display: flex;
     /* align-items: center; */
     flex-direction: column;
@@ -258,6 +258,8 @@ display: flex;
 }
 #answer{
   align-self: center;
+  color: yellow;
+  font: 24px;
 }
 #meaning{
   align-self: center;
@@ -311,4 +313,34 @@ display: flex;
   color: white;
   padding-top: 15px;
   margin-left: 15px;
+}
+#div_kanjitokami{
+  display: none;
+  margin-top: 65px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#check{
+  width: 70%;
+  margin-left: 0%;
+}
+.div_kanjitokami button{
+  width: 40%;
+  padding: 5px;
+  margin-top: 15px;
+  margin-left: 6.5%;
+  font-size: 20px;
+  background-color: #604088;
+  color: yellow;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: white 2px solid;
+  box-shadow: 5px 5px 5px rgba(138, 135, 135, 0.7);
+}
+#button_valid{
+  height: 25px;
+  width: 100%;
+  margin-left: 0%;
 }
