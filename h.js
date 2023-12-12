@@ -28,6 +28,8 @@ let search_input_vocabulaire = document.getElementById("search_input_vocabulaire
 let div_kanjitokami = document.getElementById("div_kanjitokami");
 let section_grammaire = document.getElementById("section_grammaire");
 let progression = 1;
+let popup_grammaire = document.getElementById("popup_grammaire");
+let button_grammaire = document.getElementById("button_grammaire");
 btn_enter.addEventListener("click",e=>{
     if(waiting_answer){
         Check();
@@ -227,6 +229,7 @@ function minna(){
     n_keyboard_container.style.display = "none";
     meaning.style.display = "none";
     Hscore.style.display = "none";
+    section_grammaire.style.display = "none";
     devine_moi.style.display = "none";
     answer.style.display = "none";
     progression_bar.style.width = `0%`;
@@ -247,6 +250,7 @@ function All(){
     div_kanjitokami.style.display = "none";
     n_keyboard_container.style.display = "none";
     section_vocabulaire.style.display = "none";
+    section_grammaire.style.display = "none";
 
 }
 
@@ -395,6 +399,7 @@ function vocabulaire(){
     section_vocabulaire.style.display = "flex";
     div_kanjitokami.style.display = "none";
     search_input_vocabulaire.value = ""
+    section_grammaire.style.display = "none";
     // button_vocabulaire.innerHTML = "";
     // let innerHTML = "";
     // innerHTML = ""
@@ -472,6 +477,130 @@ function Grammaire(){
  devine_moi.style.display = "none";
  answer.style.display = "none";
  progression_bar.style.width = `0%`;
+ button_grammaire.innerHTML = "";
+let innerHTML = "";
+    for(let i = 0;i < MinnaGram.list.length ; i++){
+        innerHTML += `<button id = "${i}" onclick="OpenPopUp_grammaire(${i},MinnaGram.list)">${MinnaGram.list[i].title}</button>`
+    }
+    button_grammaire.innerHTML = innerHTML;
+}
 
- 
+class Reibun {
+    static list = [];
+    
+    constructor(pId, pJap, pFr, pLesson, pRef) {
+        this.id = pId;
+        this.jap = pJap;
+        this.fr = pFr;
+        this.lesson = pLesson;
+        this.ref = pRef;
+
+        Reibun.list.push(this);
+    }
+}
+readReibunFile("./日本語 - 例文.tsv");
+function readReibunFile(pFile) {
+    let rawFile = new XMLHttpRequest();
+    rawFile.open("GET", pFile, true);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
+                tsvFile = rawFile.responseText;
+                createReibun(tsvFile);
+            }
+        }
+    }
+    rawFile.send(null);    
+}
+
+function createReibun(pFile) {
+    let row = pFile.split(/\r\n|\n/);
+    let newGram;
+    let lesson = 0;
+    let id = 1;
+    for (let i = 1; i < row.length; i++) {
+        row[i] = row[i].split('\t');
+        if (row[i][0][0] == "#") {
+            lesson = row[i][0].split("#")[1];
+        } else {
+            newGram = new Reibun(id, row[i][0], row[i][1], lesson, row[i][2]);
+            id++;
+        }
+    }
+    readMinnaGramFile("./日本語 - 文法.tsv");
+}
+
+class MinnaGram {
+    static list = [];
+    static reiList = [];
+    
+    constructor(pId, pTitle, pContent, pLesson) {
+        this.id = pId;
+        this.title = pTitle;
+        this.content = pContent;
+        this.reibunList = [];
+        
+        this.lesson = pLesson;
+        MinnaGram.list.push(this);
+    }
+
+    addReibun(pR) {
+        this.reibunList.push(pR);
+    }
+}
+
+function readMinnaGramFile(pFile) {
+    let rawFile = new XMLHttpRequest();
+    rawFile.open("GET", pFile, true);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
+                tsvFile = rawFile.responseText;
+                createMinnaGram(tsvFile);
+            }
+        }
+    }
+    rawFile.send(null);    
+}
+
+function createMinnaGram(pFile) {
+    let row = pFile.split(/\r\n|\n/);
+    let newGram;
+    let lesson = 0;
+    let id = 1;
+    for (let i = 1; i < row.length; i++) {
+        row[i] = row[i].split('\t');
+        if (row[i][0][0] == "#") {
+            lesson = row[i][0].split("#")[1];
+        } else {
+            newGram = new MinnaGram(id, row[i][0], row[i][1], lesson);
+            id++;
+            Reibun.list.forEach(r => {
+                if (r.lesson == lesson && r.ref == row[i][2]) {
+                    newGram.addReibun(r);
+                }
+            });
+        }
+    }
+}
+
+function OpenPopUp_grammaire(id, liste){
+    popup_grammaire.style.display = "block";
+    popup_grammaire.innerHTML = "";
+    let innerHTML;
+    innerHTML = `
+    <div><p id="explain">${liste[id].title}</p></div>
+    <div id="reibun"><p class="reibun">${liste[id].content}</p>`;
+    for(i = 0; i < liste[id].reibunList.length; i++){
+        innerHTML += `
+        <p class = "reibun"><span></span>${liste[id].reibunList[i].jap}
+        <br>${liste[id].reibunList[i].fr}</p>
+        `;
+    }
+    innerHTML += `</div>`
+    popup_grammaire.innerHTML = innerHTML;
+}
+
+function closepopup_grammaire(){
+    popup_grammaire.style.display = "none";
 }

@@ -344,3 +344,66 @@ display: flex;
   width: 100%;
   margin-left: 0%;
 }
+#popup_grammaire{
+  position: fixed;
+  top: 65px;
+  margin-top: 5px;
+  margin-left: 19.5px;
+  background-color: #604088;
+  width: 90%;
+   height: 650px;
+  display: none;
+  border-radius: 30px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  border: yellow 2px solid;
+
+}
+
+#button_grammaire{
+  display: flex;
+  /* margin-top: 65px; */
+  flex-direction: column;
+  width: 100%;
+}
+
+.button_grammaire button{
+  width: 80%;
+  /* height: 50px; */
+  padding: 5px;
+  margin-top: 15px;
+  align-self: center;
+  font-size: 20px;
+  background-color: #604088;
+  color: yellow;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: white 2px solid;
+  box-shadow: 5px 5px 5px rgba(138, 135, 135, 0.7);
+}
+
+#explain{
+  color: black;
+  text-align: center;
+  font-size: 25px;
+}
+
+.reibun{
+  width: 92%;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 6.5%;
+  font-size: 18px;
+  background-color: #604088;
+  color: yellow;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#reibun{
+  overflow-y: scroll;
+  height: 550px;
+  
+}
